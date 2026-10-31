@@ -82,7 +82,7 @@ Els nodes d'`igraph` porten l'identificador (`CVE-2021-44228`, `CWE-20`, `T1574.
    | 4 | Quins productes/plataformes (CPE) són afectats? |
    | 5 | Quines mitigacions o defenses hi ha enllaçades? |
 
-4. **Una taula base** (`taula_pont`): una fila per CVE i pregunta, amb les columnes `cve`, `pregunta`, `n`, `el graf hi arriba?` i `elements`.
+4. **Una taula base** (`taula_pont`): una fila per CVE i pregunta, amb les columnes `cve`, `pregunta`, `n`, `el graf hi arriba?` i `elements`, **desada també a `taula_pont.csv`** al costat de l'`.Rmd` (`readr::write_csv(taula_pont, "taula_pont.csv")`) i pujada al repo: els exercicis de la S5 i la S7 la llegeixen amb aquest nom.
 5. **Lectura**: per pregunta, què diu el graf i què no es pot concloure.
 
 ## Només amb el graf, i què vol dir «hi arriba»
@@ -107,7 +107,7 @@ No es val a respondre «no» perquè el codi no ha donat res sense mirar per qu�
 | Pas 0 | La llista `standards` idèntica a la de l'enunciat, amb la comprovació 4.145 / 30.230 i el cost (temps, memòria) del teu equip |
 | (a), (b) | El subgraf i les llistes, amb el codi visible (`echo = TRUE`) |
 | (c) | Les cinc preguntes × dos CVE, cada una amb el seu estat (sí / no / altre camí) |
-| Taula base | `taula_pont`, una fila per CVE i pregunta |
+| Taula base | `taula_pont`, una fila per CVE i pregunta, i el fitxer `taula_pont.csv` al repo |
 | Lectura i limitacions | Què no es pot concloure; xifres amb codi en línia |
 | Procedència | `sessionInfo()` amb la versió de `mitre` i d'`igraph` |
 

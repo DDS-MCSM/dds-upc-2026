@@ -128,6 +128,8 @@ cas <- c("CVE-2021-44228", "CVE-2017-5645")
 # TODO: la taula base, una fila per CVE i pregunta, amb les columnes
 # cve | pregunta | n | el graf hi arriba? | elements
 # L'objecte es diu taula_pont; es reutilitza a la S5 (exercici 1) i a la S7 (comparació amb KGCS).
+# Desa-la al costat de l'.Rmd: les plantilles de la S5 i la S7 la llegeixen amb aquest nom.
+# readr::write_csv(taula_pont, "taula_pont.csv")
 ```
 
 ## Lectura
