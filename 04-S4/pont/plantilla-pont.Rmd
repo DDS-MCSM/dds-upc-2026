@@ -1,0 +1,149 @@
+---
+title: "Exercici-pont S4 → S5"
+author: "`r params$equip`"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
+params:
+  equip: "Nom de l'equip"
+  sessio: "S4-pont"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    theme: default
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+# Opcions globals: es mostra el codi, s'amaguen avisos i missatges.
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(mitre)
+library(tidyverse)
+```
+
+<!-- Plantilla del pont (plantilla-pont.Rmd), feta a partir de templates/dds-template.Rmd.
+     Els chunks marcats `eval = FALSE` són teus: escriu-hi el codi i treu `eval = FALSE`.
+     Substitueix cada text en cursiva pel teu contingut i esborra els comentaris. -->
+
+## Objectiu
+
+*Una frase: quina pregunta respon aquest informe i per a qui. Digues explícitament que les respostes surten només del graf.*
+
+## Dades
+
+*Paquet i versió de `mitre`, taules que entren a la llista `standards`, i data de les dades (18/04/2025).*
+
+## Pas 0 — La llista `standards` del cas
+
+*Copia el codi **tal com és** (no el modifiquis): filtra només CVE i CPE; les altres famílies van completes. Si el copies amb canvis, el graf no serà el del cas.*
+
+```{r pas0-inici, include=FALSE}
+t_inici <- proc.time()[["elapsed"]]
+invisible(gc(reset = TRUE))
+```
+
+```{r pas0}
+library(mitre)
+cve <- dplyr::filter(cve.nist, cve.id %in% c("CVE-2021-44228", "CVE-2017-5645") |
+                     grepl("log4j", description, ignore.case = TRUE))
+# Sentinelles: build_cve2cwe_edges() (dds-2026) buida TOTES les arestes CVE-CWE si el conjunt
+# no té cap 'NVD-CWE-noinfo' ni cap 'NVD-CWE-Other'. Les sentinelles no tenen arestes i el graf les descarta.
+sent <- cve.nist[cve.nist$problem.type %in% c('["NVD-CWE-noinfo"]', '["NVD-CWE-Other"]') &
+                 !cve.nist$cve.id %in% cve$cve.id, ]
+cve <- rbind(cve, sent[!duplicated(sent$problem.type), ])
+cpe <- dplyr::filter(cpe.nist, product == "log4j")
+s <- list(
+  cpe   = list(cpe.nist = cpe),
+  cve   = list(cve.nist = cve),
+  cwe   = list(cwe.views = cwe.views, cwe.categories = cwe.categories, cwe.weaknesses = cwe.weaknesses),
+  capec = list(capec.views = capec.views, capec.categories = capec.categories,
+               capec.patterns = capec.patterns, capec.relations = capec.relations),
+  attck = list(attck.tactics = attck.tactics, attck.techniques = attck.techniques,
+               attck.mitigations = attck.mitigations, attck.groups = attck.groups,
+               attck.software = attck.software, attck.data_component = attck.data_component,
+               attck.data_relations = attck.data_relations, attck.relations = attck.relations),
+  shield = list(shield.tactics = shield.tactics, shield.techniques = shield.techniques,
+                shield.procedures = shield.procedures, shield.use_cases = shield.use_cases,
+                shield.opportunities = shield.opportunities, shield.relations = shield.relations),
+  engage = list(engage.goals = engage.goals, engage.approaches = engage.approaches,
+                engage.activities = engage.activities, engage.av = engage.av, engage.relations = engage.relations),
+  car = list(car.analytics = car.analytics, car.model = car.model, car.coverage = car.coverage,
+             car.implementations = car.implementations, car.sensors = car.sensors, car.relations = car.relations)
+)
+# build_capec_nodes() i build_cwe2cwe_edges() (dds-2026) llegeixen el 'standards' del paquet (la mostra)
+# i no l'argument: sense això, CAPEC i CWE-CWE surten de la mostra i la cadena es trenca.
+utils::assignInNamespace("standards", s, ns = "mitre")
+net <- build_network(standards = s, as_igraph = TRUE)
+```
+
+```{r pas0-fi, include=FALSE}
+t_fi <- proc.time()[["elapsed"]]
+gg <- gc()
+```
+
+*Comprovació: el graf ha de tenir 4.145 nodes i 30.230 arestes. Si no, atura't: la llista no és la del cas.*
+
+```{r comprovacio}
+library(igraph)
+stopifnot(vcount(net) == 4145, ecount(net) == 30230)
+cat("Temps (s):", round(t_fi - t_inici, 1), "| heap d'R màxim (MB):", round(sum(gg[, 6])), "
+")
+```
+
+## El subgraf del cas (a)
+
+*Construeix el subgraf amb els dos CVE i el que hi arriba en tres passes (`igraph::neighborhood()`, `induced_subgraph()`). Recorda que l'identificador d'un node és `V(net)$label`, no `name`.*
+
+```{r subgraf, eval = FALSE}
+cas <- c("CVE-2021-44228", "CVE-2017-5645")
+# TODO: node_cas(), neighborhood(), induced_subgraph(); nodes i arestes del subgraf, per família
+```
+
+## Les llistes trobades (b)
+
+*Els CWE, els CAPEC i les tècniques que troba la cadena CVE → CWE → CAPEC → ATT&CK, per a cada CVE (sentit de sortida).*
+
+```{r llistes, eval = FALSE}
+# TODO: una funció per salt (veïns de sortida filtrats per V(net)$group i V(net)$type) i una taula per CVE
+```
+
+## Les cinc preguntes (c)
+
+*Per a cada CVE i cada pregunta: la resposta del graf (quants i quins) i **si el graf hi arriba**. Només amb el graf: no consultis `cve.nist` ni cap altra taula per respondre.*
+
+| # | Pregunta | Quin salt del graf? |
+|---|---|---|
+| 1 | Quins CWE té el CVE? | *?* |
+| 2 | Quins patrons CAPEC demostren aquests CWE? | *?* |
+| 3 | Quines tècniques ATT&CK implementen aquests patrons? | *?* |
+| 4 | Quins productes/plataformes CPE són afectats? | *?* |
+| 5 | Quines mitigacions o defenses hi ha enllaçades? | *?* |
+
+```{r preguntes, eval = FALSE}
+# TODO: les respostes. Pista per a la 3: si el graf no hi arriba per la cadena, mesura la distància
+# mínima amb igraph::distances() i mira per on passa el camí (igraph::shortest_paths()).
+# Pista per a la 5: les defenses poden penjar de les tècniques en sentit entrant (mode = "in").
+```
+
+```{r taula-base, eval = FALSE}
+# TODO: la taula base, una fila per CVE i pregunta, amb les columnes
+# cve | pregunta | n | el graf hi arriba? | elements
+# L'objecte es diu taula_pont; es reutilitza a la S5 (exercici 1) i a la S7 (comparació amb KGCS).
+```
+
+## Lectura
+
+*Per pregunta: què diu el graf i què **no** es pot concloure. Totes les xifres, amb codi en línia (cap número escrit a mà). Si un CVE no arriba a una tècnica per la cadena, digues per quin altre camí hi arriba, o que no hi arriba.*
+
+## Limitacions i preguntes obertes
+
+*Què no cobreix el graf (mostra de dades, enllaços exactes, sentit de les arestes), quin biaix tenen les dades i què quedaria per respondre.*
+
+## Procedència
+
+```{r procedencia}
+cat("mitre", as.character(packageVersion("mitre")), "
+")
+cat("Paràmetres: equip =", params$equip, "| sessio =", params$sessio, "
+")
+sessionInfo()
+```

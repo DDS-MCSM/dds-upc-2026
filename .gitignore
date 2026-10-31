@@ -10,6 +10,8 @@
 # Resultats i dades personals: no es pugen
 outputs/
 *.json
+# Excepció: la mostra anònima de l'exercici 2 (S3)
+!**/data-sample/*.json
 
 # Sistema
 .DS_Store

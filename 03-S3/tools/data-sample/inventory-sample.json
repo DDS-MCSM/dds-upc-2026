@@ -1,0 +1,652 @@
+{
+  "CollectedAt": "2026-10-31T12:00:00.0000000+01:00",
+  "Tools": [
+    {
+      "Name": "git",
+      "Available": true,
+      "Path": "C:\\Program Files\\Git\\mingw64\\bin\\git.exe",
+      "Version": "2.55.0.5"
+    },
+    {
+      "Name": "python",
+      "Available": true,
+      "Path": "C:\\Tools\\python.exe",
+      "Version": "3.13.14150.1013"
+    },
+    {
+      "Name": "node",
+      "Available": true,
+      "Path": "C:\\Program Files\\nodejs\\node.exe",
+      "Version": "24.22.1.0"
+    },
+    {
+      "Name": "npm",
+      "Available": true,
+      "Path": "C:\\Program Files\\nodejs\\npm.ps1",
+      "Version": null
+    },
+    {
+      "Name": "az",
+      "Available": true,
+      "Path": "C:\\Tools\\az.bat",
+      "Version": null
+    },
+    {
+      "Name": "azd",
+      "Available": false,
+      "Path": null,
+      "Version": null
+    },
+    {
+      "Name": "docker",
+      "Available": true,
+      "Path": "C:\\Tools\\docker.exe",
+      "Version": "29.9.2"
+    },
+    {
+      "Name": "kubectl",
+      "Available": true,
+      "Path": "C:\\Tools\\kubectl.exe",
+      "Version": null
+    },
+    {
+      "Name": "rg",
+      "Available": false,
+      "Path": null,
+      "Version": null
+    },
+    {
+      "Name": "pwsh",
+      "Available": true,
+      "Path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "Version": "7.6.9.0"
+    }
+  ],
+  "Appx": [
+    {
+      "Name": "Microsoft.AAD.BrokerPlugin",
+      "Version": "1000.19580.1000.2",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.AAD.BrokerPlugin_1000.19580.1000.2_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.AccountsControl",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.AccountsControl_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.AsyncTextService",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.AsyncTextService_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.BioEnrollment",
+      "Version": "10.0.19587.1000",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.BioEnrollment_10.0.19587.1000_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.CredDialogHost",
+      "Version": "10.0.19595.1001",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.CredDialogHost_10.0.19595.1001_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.MicrosoftEdgeDevToolsClient",
+      "Version": "1000.25128.1000.0",
+      "Publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftEdgeDevToolsClient_1000.25128.1000.0_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Win32WebViewHost",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Win32WebViewHost_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.Apprep.ChxApp",
+      "Version": "1000.25128.1000.0",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.Apprep.ChxApp_1000.25128.1000.0_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.AugLoop.CBS",
+      "Version": "1.1126.2131.0",
+      "Publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.AugLoop.CBS_1.1126.2131.0_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.CapturePicker",
+      "Version": "10.0.19580.1000",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.CapturePicker_10.0.19580.1000_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.CloudExperienceHost",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.CloudExperienceHost_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.ContentDeliveryManager",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.ContentDeliveryManager_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.NarratorQuickStart",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.NarratorQuickStart_10.0.26100.1_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.ParentalControls",
+      "Version": "1000.25128.1000.0",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.ParentalControls_1000.25128.1000.0_x64__8wekyb3d8bbwe"
+    },
+    {
+      "Name": "Microsoft.Windows.PeopleExperienceHost",
+      "Version": "10.0.26100.1",
+      "Publisher": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "InstallLocation": "C:\\Program Files\\WindowsApps\\Microsoft.Windows.PeopleExperienceHost_10.0.26100.1_x64__8wekyb3d8bbwe"
+    }
+  ],
+  "Programs": [
+    {
+      "DisplayName": "NVIDIA CUDA Runtime 13.2",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.51.36247",
+      "DisplayVersion": "14.51.36247",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260715"
+    },
+    {
+      "DisplayName": "Microsoft Windows Application Compatibility Fix Database",
+      "DisplayVersion": null,
+      "Publisher": null,
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "IntelliTraceProfilerProxy",
+      "DisplayVersion": "15.0.21225.01",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Windows SDK DirectX x64 Remote",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Git",
+      "DisplayVersion": "2.55.0.5",
+      "Publisher": "The Git Development Community",
+      "InstallDate": "20261017"
+    },
+    {
+      "DisplayName": "Windows SDK for Windows Store Apps Headers OnecoreUap",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "NVIDIA Nsight Visual Studio Edition 2026.1.0.25345",
+      "DisplayVersion": "26.1.0.25345",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "vs_minshellmsires",
+      "DisplayVersion": "18.9.11915",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260831"
+    },
+    {
+      "DisplayName": "NVIDIA Controlador de gráficos 621.01",
+      "DisplayVersion": "621.01",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Office 16 Click-to-Run Extensibility Component",
+      "DisplayVersion": "16.0.20527.20016",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "NVJPEG Runtime",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Windows Software Development Kit - Windows 10.0.26100.9457",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "Windows SDK for Windows Store Apps DirectX x86 Remote",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Mozilla Firefox (x64 ca)",
+      "DisplayVersion": "159.0",
+      "Publisher": "Mozilla",
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "Microsoft.NET.Workload.Emscripten.net9.Manifest-10.0.100 (x64)",
+      "DisplayVersion": "81.200.61678",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Rtools 4.5 (6768-6492)",
+      "DisplayVersion": "4.5.6768",
+      "Publisher": "The R Foundation",
+      "InstallDate": "20260422"
+    },
+    {
+      "DisplayName": "NVIDIA Controlador de audio HD 1.4.6.6",
+      "DisplayVersion": "1.4.6.6",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "CUSPARSE Development",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "NVIDIA AIUser Container",
+      "DisplayVersion": "1.51",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "${{arpDisplayName}}",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Compute Sanitizer",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "WinRT Intellisense Desktop - Other Languages",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "WebView2 Runtime de Microsoft Edge",
+      "DisplayVersion": "156.0.4314.50",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261028"
+    },
+    {
+      "DisplayName": "Intel(R) Management Engine Components",
+      "DisplayVersion": "1.0.0.0",
+      "Publisher": "Intel Corporation",
+      "InstallDate": "20260404"
+    },
+    {
+      "DisplayName": "Go Programming Language amd64 go1.27.0",
+      "DisplayVersion": "1.27.0",
+      "Publisher": "https://go.dev",
+      "InstallDate": "20260831"
+    },
+    {
+      "DisplayName": "NVIDIA App 11.0.9.565",
+      "DisplayVersion": "11.0.9.565",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Microsoft System CLR Types para SQL Server 2019",
+      "DisplayVersion": "15.0.2000.5",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Windows Subsystem for Linux",
+      "DisplayVersion": "2.7.14.0",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260917"
+    },
+    {
+      "DisplayName": "Microsoft Visual Studio Installer",
+      "DisplayVersion": "4.11.24.2075",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "vs_filehandler_amd64",
+      "DisplayVersion": "18.11.12301",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261016"
+    },
+    {
+      "DisplayName": "NVIDIA NvDLISR",
+      "DisplayVersion": "1.0",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Microsoft ASP.NET Core Targeting Pack - 10.0.14 (x64)",
+      "DisplayVersion": "80.56.61678",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Windows SDK Facade Windows WinMD Versioned",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Intel(R) Management Engine Components",
+      "DisplayVersion": "2540.8.40.0",
+      "Publisher": "Intel Corporation",
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "DiagnosticsHub_CollectionService",
+      "DisplayVersion": "18.5.37003",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260502"
+    },
+    {
+      "DisplayName": "WPT Redistributables",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "nvcc",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "SDK ARM64 Redistributables",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "NVIDIA Telemetry Client",
+      "DisplayVersion": "19.8.6.0",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Microsoft .NET Host FX Resolver - 10.0.14 (x64)",
+      "DisplayVersion": "80.56.61678",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Intel(R) Management Engine Driver",
+      "DisplayVersion": "1.0.0.0",
+      "Publisher": "Intel Corporation",
+      "InstallDate": "20260404"
+    },
+    {
+      "DisplayName": "vs_communityx64msi",
+      "DisplayVersion": "18.11.12301",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261016"
+    },
+    {
+      "DisplayName": "CUDA Documentation",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "CUDA Profiler API",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+      "DisplayVersion": "10.0.40219",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261017"
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ 2022 X86 Debug Runtime - 14.51.36247",
+      "DisplayVersion": "14.51.36247",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260715"
+    },
+    {
+      "DisplayName": "Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest-10.0.100 (x64)",
+      "DisplayVersion": "81.188.56884",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260812"
+    },
+    {
+      "DisplayName": "Notepad++ (64-bit x64)",
+      "DisplayVersion": "8.9.8.1",
+      "Publisher": "Notepad++ Team",
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "NVIDIA FrameView SDK 1.9.12728.38614306",
+      "DisplayVersion": "1.9.12728.38614306",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Windows App Certification Kit x64",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Realtek Ethernet Controller Driver",
+      "DisplayVersion": "11.27.50.0919",
+      "Publisher": "Realtek",
+      "InstallDate": "20260404"
+    },
+    {
+      "DisplayName": "icecap_collection_x64",
+      "DisplayVersion": "18.10.12020",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261013"
+    },
+    {
+      "DisplayName": "CUBLAS Runtime",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.51.36247",
+      "DisplayVersion": "14.51.36247",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260715"
+    },
+    {
+      "DisplayName": "Office 16 Click-to-Run Localization Component",
+      "DisplayVersion": "16.0.20527.20016",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Microsoft Visual Studio Setup WMI Provider",
+      "DisplayVersion": "4.8.41.48107",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260812"
+    },
+    {
+      "DisplayName": "Windows App Certification Kit SupportedApiList x86",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Visual Studio Community 2026",
+      "DisplayVersion": "18.11.3",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "CUSOLVER Development",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "NVIDIA Nsight Compute 2026.1.0",
+      "DisplayVersion": "26.1.0.0",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "CUFFT Development",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "R for Windows 4.6.1",
+      "DisplayVersion": "4.6.1",
+      "Publisher": "R Core Team",
+      "InstallDate": "20260917"
+    },
+    {
+      "DisplayName": "Microsoft .NET Targeting Pack - 10.0.11 (x64)",
+      "DisplayVersion": "80.44.56884",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260812"
+    },
+    {
+      "DisplayName": "NVVM Development",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "IntelliTraceProfilerProxy",
+      "DisplayVersion": "15.0.21225.01",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Google Chrome",
+      "DisplayVersion": "156.0.8078.80",
+      "Publisher": "Google LLC",
+      "InstallDate": "20261030"
+    },
+    {
+      "DisplayName": "vs_githubprotocolhandlermsi",
+      "DisplayVersion": "18.10.12106",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261013"
+    },
+    {
+      "DisplayName": "NVJPEG Development",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "PowerShell 7-x64",
+      "DisplayVersion": "7.6.9.0",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "R for Windows 4.5.3",
+      "DisplayVersion": "4.5.3",
+      "Publisher": "R Core Team",
+      "InstallDate": "20260422"
+    },
+    {
+      "DisplayName": "NVIDIA CUDA Toolkit 13.2",
+      "DisplayVersion": "13.2",
+      "Publisher": "NVIDIA Corporation",
+      "InstallDate": "20260408"
+    },
+    {
+      "DisplayName": "Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest-10.0.100 (x64)",
+      "DisplayVersion": "81.188.56884",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20260812"
+    },
+    {
+      "DisplayName": "Node.js",
+      "DisplayVersion": "24.22.1",
+      "Publisher": "Node.js Foundation",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Windows SDK for Windows Store Managed Apps Libs",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Microsoft Azure CLI (64-bit)",
+      "DisplayVersion": "2.91.0",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261017"
+    },
+    {
+      "DisplayName": "Microsoft .NET Runtime - 8.0.33 (x64)",
+      "DisplayVersion": "64.132.61667",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Microsoft Edge",
+      "DisplayVersion": "156.0.4314.50",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261028"
+    },
+    {
+      "DisplayName": "7-Zip 26.05 (x64 edition)",
+      "DisplayVersion": "26.05.00.0",
+      "Publisher": "Igor Pavlov",
+      "InstallDate": "20261023"
+    },
+    {
+      "DisplayName": "Windows SDK",
+      "DisplayVersion": "10.1.26100.9457",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": "20261025"
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ v14 Redistributable (x64) - 14.51.36247",
+      "DisplayVersion": "14.51.36247.0",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": null
+    },
+    {
+      "DisplayName": "Microsoft Visual C++ v14 Redistributable (x86) - 14.51.36247",
+      "DisplayVersion": "14.51.36247.0",
+      "Publisher": "Microsoft Corporation",
+      "InstallDate": null
+    }
+  ],
+  "Errors": []
+}
