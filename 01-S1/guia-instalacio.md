@@ -80,7 +80,7 @@ Hi ha **dues vies**; tria'n **una**. La via 1 és la més curta; la via 2 és pe
 
 ```r
 install.packages("remotes")
-remotes::install_github("motherhack3r/mitre@dds-2026")
+remotes::install_github("DDS-MCSM/mitre@dds-2026")
 ```
 
 Desa 36 MB a la memòria cau de la sessió; pot trigar uns minuts.
