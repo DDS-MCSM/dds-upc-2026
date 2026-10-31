@@ -1,0 +1,16 @@
+# R / RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+*_files/
+*_cache/
+
+# Resultats i dades personals: no es pugen
+outputs/
+*.json
+
+# Sistema
+.DS_Store
+Thumbs.db

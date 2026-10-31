@@ -1,0 +1,88 @@
+---
+title: "Data Driven Security — Exercici"
+author: "`r params$equip`"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
+params:
+  equip: "Nom de l'equip"
+  sessio: "S2"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    theme: default
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+# Opcions globals: es mostra el codi, s'amaguen avisos i missatges.
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(mitre)
+library(tidyverse)
+```
+
+<!-- Sessió: `r params$sessio`. Substitueix cada text en cursiva pel teu contingut i esborra el que no facis servir. -->
+
+## Objectiu
+
+*Una frase: quina pregunta de seguretat respon aquesta anàlisi i per a qui.*
+
+Exemple: descriure com es distribueix la gravetat (CVSS v3) de les vulnerabilitats publicades a NVD.
+
+## Dades
+
+*D'on surten les dades (paquet, taula, fitxer) i la data en què les has obtingudes.*
+
+Font: paquet `mitre` (versió `dds-2026`), taula `cve.nist` (CVE de NVD fins a l'abril de 2025, amb els del cas `CVE-2021-44228` i `CVE-2017-5645`). Data d'execució: `r format(Sys.Date(), '%d/%m/%Y')`.
+
+```{r dades}
+cve.nist <- mitre::cve.nist
+dim(cve.nist)
+```
+
+## Anàlisi
+
+*Els passos de l'anàlisi, en ordre, cadascun amb una frase que expliqui què fa i per què.*
+
+Exemple mínim: histograma de la puntuació CVSS v3 (els CVE sense puntuació v3 s'exclouen).
+
+```{r analisi}
+cvss <- cve.nist %>%
+  filter(!is.na(cvss3.score))
+
+ggplot(cvss, aes(x = cvss3.score)) +
+  geom_histogram(binwidth = 0.5, boundary = 0, fill = "grey40", colour = "white") +
+  labs(x = "CVSS v3 base score", y = "Number of CVEs",
+       title = "Distribution of CVSS v3 scores in NVD")
+```
+
+## Resultats
+
+*Les troballes, en taules (`knitr::kable`) i figures, amb una frase d'interpretació cadascuna.*
+
+```{r resultats}
+# Resum numèric de la puntuació.
+cvss %>%
+  summarise(n = n(),
+            mitjana = mean(cvss3.score),
+            mediana = median(cvss3.score),
+            p90 = quantile(cvss3.score, 0.9)) %>%
+  knitr::kable(digits = 2, caption = "Resum de cvss3.score")
+```
+
+## Limitacions i preguntes obertes
+
+*Què no cobreix l'anàlisi, quins biaixos tenen les dades i què quedaria per respondre.*
+
+- Només es compten els CVE amb puntuació CVSS v3; els anteriors o sense puntuar queden fora.
+- La puntuació mesura gravetat tècnica, no risc per a una organització concreta.
+- Les dades arriben fins a l'abril de 2025: no inclouen cap CVE posterior.
+
+## Procedència
+
+*Versió del paquet i de l'entorn, perquè una altra persona pugui reproduir el resultat.*
+
+```{r procedencia}
+cat("mitre", as.character(packageVersion("mitre")), "\n")
+cat("Paràmetres: equip =", params$equip, "| sessio =", params$sessio, "\n")
+sessionInfo()
+```
