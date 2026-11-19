@@ -1,6 +1,6 @@
 # Guia d'instal·lació — Data Driven Security 2026
 
-**Abans de la sessió 1 (26/11/2026).** Calen uns 30–40 minuts i una connexió estable (es baixen uns 36 MB de dades). Segueix els passos **en aquest ordre**. Si alguna cosa falla, anota el missatge d'error exacte i porta'l a classe: l'exercici 0 existeix per això.
+**Abans de la sessió 1 (19/11/2026).** Calen uns 30–40 minuts i una connexió estable (es baixen uns 36 MB de dades). Segueix els passos **en aquest ordre**. Si alguna cosa falla, anota el missatge d'error exacte i porta'l a classe: l'exercici 0 existeix per això.
 
 Repositori de l'assignatura: <https://github.com/DDS-MCSM/dds-upc-2026>
 

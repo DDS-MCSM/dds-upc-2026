@@ -10,10 +10,10 @@ Vuit sessions de 3 h (18:30–21:30).
 
 | Sessió | Data | Docent | Carpeta |
 |---|---|---|---|
-| S1 Data Science i entorn | dj 26/11 | Arnau | [`01-S1`](01-S1/) |
-| S2 Anàlisi reproduïble | dl 30/11 | Arnau | [`02-S2`](02-S2/) |
-| S3 Dades elegants = estàndards | dt 01/12 | Arnau | [`03-S3`](03-S3/) |
-| S4 Exploració, gràfics i ML | dj 03/12 | Arnau | [`04-S4`](04-S4/) |
+| S1 Data Science i entorn | dj 19/11 | Humbert | [`01-S1`](01-S1/) |
+| S2 Anàlisi reproduïble | dl 30/11 | Humbert | [`02-S2`](02-S2/) |
+| S3 Dades elegants = estàndards | dt 01/12 | Humbert | [`03-S3`](03-S3/) |
+| S4 Exploració, gràfics i ML | dj 03/12 | Humbert | [`04-S4`](04-S4/) |
 | S5 Quatre generacions de model | dj 10/12 | Humbert | [`05-S5`](05-S5/) |
 | S6 Del model al sistema | dl 14/12 | Humbert | [`06-S6`](06-S6/) |
 | S7 Fonamentar en coneixement: KGCS | dt 15/12 | Humbert | [`07-S7`](07-S7/) |

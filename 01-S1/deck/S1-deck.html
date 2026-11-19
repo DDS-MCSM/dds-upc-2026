@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="ca" data-theme="dark">
+<html lang="ca" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- DECK: change title, then topbar .brand-sub, hero and sections. See docs/deck-template-README.md -->
-<title>S1 · Data Science i entorn</title>
+<title>S1 visual · Data Science i entorn</title>
 <script>
-  // Theme before first paint. Dark is the default; only "light" is stored.
+  // Theme before first paint. This visual deck is designed light: light is the default.
   (function () {
     var t = null;
     try { t = localStorage.getItem("dds-deck-theme"); } catch (e) {}
-    document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t === "dark" ? "dark" : "light");
   })();
 </script>
 <style>
@@ -275,8 +275,110 @@
   }
   /* ============ END TEMPLATE CORE ============ */
 
-  /* DECK: deck-specific CSS goes here, and only here. */
-  .ex-card .mono{ overflow-wrap:anywhere; }
+  /* Visual redesign: visual language inspired by DDS 2023. */
+  :root{
+    --dds-navy:#102f5d; --dds-blue:#1674b7; --dds-cyan:#23c2ca;
+    --dds-mint:#72d8d8; --dds-amber:#f5b544; --dds-pale:#edf8fa;
+  }
+  body{ background:#f8fbfc; color:#12213a; }
+  .topbar{ background:rgba(248,251,252,.90); border-color:#dce8ec; }
+  .brand{ color:var(--dds-navy); }
+  .brand-mark{ background:var(--dds-cyan); border-radius:0; }
+  .brand-name{ letter-spacing:.04em; }
+  nav.jump a{ color:#416074; }
+  nav.jump a:hover,nav.jump a[aria-current="true"]{ color:#087d98; }
+  .ctl{ color:#254257; border-color:#b9d4dc; background:#fff; border-radius:0; }
+  .ctl:hover{ color:#fff; background:var(--dds-navy); border-color:var(--dds-navy); }
+  .counter{ color:#416074; }
+  .wrap{ max-width:1180px; }
+  .slide{ min-height:calc(100vh - var(--topbar-h)); padding:72px 0; border:0; position:relative; overflow:hidden; }
+  .slide::before,.slide::after{ content:""; position:absolute; pointer-events:none; z-index:-1; }
+  .slide h2{ color:var(--dds-navy); font-size:clamp(34px,4vw,50px); line-height:1.04; max-width:20ch; }
+  .kicker,.eyebrow{ color:#058aa0; font-weight:700; letter-spacing:.12em; }
+  .lede{ color:#405a6c; font-size:19px; max-width:58ch; }
+  .body{ color:#294355; }
+  .mono,code{ color:#0c6380; }
+  .hero{ margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); color:#fff; isolation:isolate; }
+  .hero::before{ inset:0; background:linear-gradient(90deg,rgba(7,32,66,.98) 0%,rgba(10,43,80,.91) 42%,rgba(7,32,66,.14) 75%),url('assets/s1-hero-cyber-data.png') center/cover; z-index:-2; }
+  .hero::after{ width:72vw; height:18vh; left:-8vw; bottom:-12vh; background:#23c2ca; opacity:.18; transform:rotate(-7deg); z-index:-1; }
+  .hero h1{ font-size:clamp(54px,7vw,82px); color:#fff; max-width:11ch; letter-spacing:-.045em; }
+  .hero .eyebrow,.hero .subtitle{ color:#bcecf0; }
+  .hero .eyebrow .dot{ background:var(--dds-amber); }
+  .hero .meta-row{ border-top:1px solid rgba(255,255,255,.35); padding-top:18px; max-width:720px; }
+  .hero .meta-item .k{ color:#9bdbe1; }
+  .hero .meta-item .v{ color:#fff; }
+  .kpis{ background:transparent; border:0; border-radius:0; gap:18px; overflow:visible; }
+  .kpi{ background:#fff; border-top:5px solid var(--dds-cyan); padding:23px; box-shadow:0 10px 28px rgba(11,50,74,.08); }
+  .kpi .num{ color:var(--dds-navy); font-size:40px; }
+  .kpi .lbl{ color:#527083; }
+  .tbl-wrap{ background:#fff; border:0; border-left:5px solid var(--dds-cyan); border-radius:0; box-shadow:0 12px 30px rgba(15,54,83,.08); }
+  th{ background:var(--dds-navy); color:#fff; }
+  th,td{ border-color:#dce8ec; padding:13px 16px; }
+  td.time{ color:#087d98; font-weight:700; }
+  .callout{ border:0; border-left:5px solid var(--dds-amber); border-radius:0; padding:22px 24px; background:#fff6df; box-shadow:none; }
+  .callout .t{ color:#865600; }
+  .callout .d{ color:#523c15; }
+  .split{ gap:54px; align-items:center; }
+  .finding{ grid-template-columns:64px 1fr; gap:18px; padding:18px 0; border-color:#cae2e7; }
+  .finding-idx{ width:48px; height:48px; display:grid; place-items:center; background:var(--dds-navy); color:#fff; border-radius:50%; font-size:15px; }
+  .finding-title{ color:var(--dds-navy); font-size:19px; }
+  .finding-body{ color:#4a6879; font-size:16px; }
+  .tag{ background:#e0f6f5; color:#087d98; border-radius:0; }
+  .tag-warn{ background:#fff0c9; color:#8a5d00; }
+  ul.list li{ border-color:#cae2e7; color:#405a6c; padding-left:28px; }
+  ul.list li::before{ content:"◆"; color:var(--dds-cyan); }
+  .code{ border-radius:0; border-left:5px solid var(--dds-cyan); box-shadow:0 14px 28px rgba(12,31,51,.20); }
+  .block-demo{ background:#edf8fa; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  .block-demo::before{ width:34vw; height:34vw; right:-18vw; top:-11vw; background:var(--dds-mint); opacity:.35; transform:rotate(45deg); }
+  .script li::before{ background:var(--dds-navy); border-color:var(--dds-navy); color:#fff; }
+  .script li:not(:last-child)::after{ background:#61c9d0; }
+  .script b{ color:var(--dds-navy); }
+  .script span{ color:#456579; }
+  .sees{ border:0; border-top:6px solid var(--dds-amber); border-radius:0; box-shadow:0 10px 28px rgba(15,54,83,.09); }
+  .sees .t{ color:#8a5d00; }
+  .block-exercise{ background:linear-gradient(115deg,#102f5d 0%,#15507e 66%,#0c889d 100%); color:#fff; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  .block-exercise h2{ color:#fff; }
+  .block-exercise .kicker,.block-exercise .lede{ color:#b7edf0; }
+  .block-exercise::before{ width:40vw; height:40vw; right:-22vw; bottom:-20vw; background:#36d3d4; opacity:.19; transform:rotate(33deg); }
+  .block-exercise .ex-card{ background:#fff; border:0; border-radius:0; box-shadow:0 14px 34px rgba(0,0,0,.18); color:#1b3850; }
+  .block-exercise .ex-card .t{ color:#087d98; }
+  .block-exercise .code{ border-left-color:var(--dds-amber); }
+  .block-compliance{ background:#fff6df; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  #estandards{ min-height:calc(100vh - var(--topbar-h)); padding-right:42%; }
+  #estandards::before{ inset:0 0 0 52%; background:linear-gradient(90deg,#f8fbfc 0%,rgba(248,251,252,.05) 28%),url('assets/s1-standards-graph.png') center right/cover no-repeat; z-index:-1; }
+  #estandards .tbl-wrap{ max-width:700px; }
+  #estandards .lede{ max-width:47ch; }
+  #cas::before{ width:260px; height:260px; border-radius:50%; right:5%; top:18%; background:radial-gradient(circle at 35% 35%,#39d2d1,#1674b7 60%,#102f5d 61%); opacity:.95; box-shadow:0 16px 40px rgba(15,54,83,.17); }
+  #cas::after{ content:'10.0'; right:calc(5% + 56px); top:calc(18% + 95px); color:#fff; font:700 51px var(--font-display); letter-spacing:-.06em; z-index:0; }
+  #cas .split{ max-width:760px; }
+  #fonts .tbl-wrap{ border-left-color:#f5b544; }
+  #git1::before{ width:420px; height:420px; right:-130px; top:70px; background:conic-gradient(from 45deg,#23c2ca 0 25%,#1674b7 0 50%,#102f5d 0 75%,#72d8d8 0); transform:rotate(45deg); opacity:.82; }
+  #git1 .split{ max-width:800px; }
+  #fases{ background:#102f5d; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  #fases h2{ color:#fff; }
+  #fases .kicker,#fases .lede{ color:#aee6e8; }
+  #fases .finding{ border-color:rgba(255,255,255,.22); }
+  #fases .finding-idx{ background:#23c2ca; color:#102f5d; }
+  #fases .finding-title{ color:#fff; }
+  #fases .finding-body{ color:#c5dde1; }
+  .block-compliance .question{ color:var(--dds-navy); font-size:clamp(38px,5.5vw,68px); max-width:15ch; }
+  .block-compliance .concept{ border-top:4px solid var(--dds-amber); padding-top:22px; }
+  .block-compliance .concept .k{ color:#896000; }
+  .block-compliance .concept .v{ color:#433c2f; }
+  .block-appendix{ background:#edf8fa; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  .name-card{ background:#fff; border:0; border-top:4px solid var(--dds-cyan); border-radius:0; padding:18px; box-shadow:0 8px 18px rgba(15,54,83,.06); }
+  .name-card dt{ color:var(--dds-navy); font-size:17px; }
+  .name-card dd{ color:#4a6879; }
+  .block-references{ background:#102f5d; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-left:max(28px,calc((100vw - 1124px)/2)); padding-right:max(28px,calc((100vw - 1124px)/2)); }
+  .block-references h2{ color:#fff; }
+  .block-references .kicker,.block-references h3{ color:#72d8d8; }
+  .block-references ul.list li{ border-color:rgba(255,255,255,.17); color:#d5e5ea; }
+  .block-references ul.list li b{ color:#fff; }
+  .block-references a{ color:#72d8d8; }
+  footer{ background:#0b2447; border:0; color:#c7e1e6; }
+  th .mono,th code,#fases .mono,#fases code,.block-references .mono,.block-references code{ color:#9be4e8; }
+  @media (max-width:760px){ .slide{ padding:62px 0; } .hero{ padding-left:24px;padding-right:24px; } .block-demo,.block-exercise,.block-compliance,.block-appendix,.block-references{ padding-left:24px;padding-right:24px; } #estandards{ padding-right:0; } #estandards::before{ opacity:.12; inset:0; } #cas::before,#cas::after,#git1::before{ opacity:.12; } }
+  @media print{ body{ background:#fff; } .slide{ padding:18mm 0; min-height:auto; } .hero,.block-demo,.block-exercise,.block-compliance,.block-appendix,.block-references{ margin-left:0;margin-right:0;padding-left:0;padding-right:0; } .hero::before{ background:#102f5d; } }
 </style>
 </head>
 <body>
@@ -317,9 +419,9 @@
     <h1>Data Science i entorn</h1>
     <p class="subtitle">Què vol dir fer ciència de dades en seguretat, d'on surten les dades, i el teu entorn funcionant amb la primera consulta feta.</p>
     <div class="meta-row">
-      <div class="meta-item"><div class="k">Data</div><div class="v">dijous 26/11/2026</div></div>
+      <div class="meta-item"><div class="k">Data</div><div class="v">dijous 19/11/2026</div></div>
       <div class="meta-item"><div class="k">Horari</div><div class="v">18:30–21:30</div></div>
-      <div class="meta-item"><div class="k">Docent</div><div class="v">Arnau</div></div>
+      <div class="meta-item"><div class="k">Docent</div><div class="v">Humbert</div></div>
       <div class="meta-item"><div class="k">Competències</div><div class="v">C.E.1 · C.E.3</div></div>
     </div>
   </section>
@@ -333,10 +435,10 @@
       <table>
         <thead><tr><th>Dia</th><th>Sessió</th><th>Docent</th></tr></thead>
         <tbody>
-          <tr><td class="time">dj 26/11</td><td><b>S1</b> Data Science i entorn</td><td>Arnau</td></tr>
-          <tr><td class="time">dl 30/11</td><td><b>S2</b> Anàlisi reproduïble</td><td>Arnau</td></tr>
-          <tr><td class="time">dt 01/12</td><td><b>S3</b> Dades elegants = estàndards</td><td>Arnau</td></tr>
-          <tr><td class="time">dj 03/12</td><td><b>S4</b> Exploració, gràfics i ML</td><td>Arnau</td></tr>
+          <tr><td class="time">dj 19/11</td><td><b>S1</b> Data Science i entorn</td><td>Humbert</td></tr>
+          <tr><td class="time">dl 30/11</td><td><b>S2</b> Anàlisi reproduïble</td><td>Humbert</td></tr>
+          <tr><td class="time">dt 01/12</td><td><b>S3</b> Dades elegants = estàndards</td><td>Humbert</td></tr>
+          <tr><td class="time">dj 03/12</td><td><b>S4</b> Exploració, gràfics i ML</td><td>Humbert</td></tr>
           <tr><td class="time">dj 10/12</td><td><b>S5</b> Quatre generacions de model</td><td>Humbert</td></tr>
           <tr><td class="time">dl 14/12</td><td><b>S6</b> Del model al sistema</td><td>Humbert</td></tr>
           <tr><td class="time">dt 15/12</td><td><b>S7</b> Fonamentar en coneixement</td><td>Humbert</td></tr>
@@ -383,8 +485,8 @@
         </ul>
       </div>
       <div class="callout">
-        <div class="t">Avaluació: provisional</div>
-        <div class="d">L'esquema (pràctiques, examen i pes de cadascun) l'estem acabant de tancar amb la coordinació del màster. Us el donarem per escrit tan bon punt el tinguem. El hackathon de la S8 hi entrarà. L'exercici 0 d'avui <b>no s'avalua</b>.</div>
+        <div class="t">Avaluació</div>
+        <div class="d">Tres pràctiques i un examen: pràctica 1 (20 %), pràctica 2 (25 %), pràctica 3 (25 %) i examen (30 %). El hackathon de la S8 és la pràctica 3. Cal un mínim de 5 a cada part. L'exercici 0 d'avui <b>no s'avalua</b>.</div>
       </div>
     </div>
   </section>
